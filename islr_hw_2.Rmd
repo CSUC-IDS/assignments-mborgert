@@ -22,9 +22,9 @@ bos = Boston
 #4
 a. Since the relationship is linear we would expect the RSS to be close to 0. Then we would expect the cubic regression RSS to be higher since the true relationship is linear. 
 
-b. We are not sure since the test data could have a different relatiion ship from the training data.
+b. We are not sure since the test data could have a different relationship from the training data.
 
-c. I dont think that there is enough information to determine which RSS is lower since we do not know the realationship of the data. 
+c. I don't think that there is enough information to determine which RSS is lower since we do not know the relationship of the data. 
 
 d. Once again, we don't know for the same reason as above. 
 
@@ -83,7 +83,7 @@ a9
 grid.arrange(a1,a2,a3,a4,a5,a6,a7,a8,a9)
 ```
 
-It looks like there is an association with all of the predictors, however some of them dont make much since. Some of the predictors had the vast majority at one value so it looks like crime would be significant when compared to other values. I think that nox,rm,age,dis,lstat, and medv are significant. The graph for black looks like it is insignificant. Ptratio and indus are both of the type that doesn't make sense. 
+It looks like there is an association with all of the predictors, however some of them don't make much sence. Some of the predictors had the vast majority at one value so it looks like crime would be significant when compared to other values. I think that `nox`,`rm`,`age`,`dis`,`lstat`, and `medv` are significant. The graph for `black` looks like it is insignificant. `Ptratio` and `indus` are both of the type that doesn't make sense. 
 
 
 ```{r}
@@ -94,7 +94,7 @@ pander(summary(bigone))
 It seems that indus, chas, rm, age,tax, and ptratio are all insignificant. 
 
 ```{r}
-x = c(lm1$coefficients[2],lm2$coefficients[2],lm3$coefficients[2],lm4$coefficients[2],lm5$coefficients[2],lm6$coefficients[2],lm7$coefficients[2],lm8$coefficients[2],lm9$coefficients[2],lm10$coefficients[2],lm11$coefficients[2],lm2$coefficients[2])
+x = c(lm1$coefficients[2],lm2$coefficients[2],lm3$coefficients[2],lm4$coefficients[2],lm5$coefficients[2],lm6$coefficients[2],lm7$coefficients[2],lm8$coefficients[2],lm9$coefficients[2],lm10$coefficients[2],lm11$coefficients[2],lm12$coefficients[2])
 x = as.numeric(x)
 
 y = bigone$coefficients[2:13]
