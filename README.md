@@ -21,3 +21,8 @@ MITCH BORGERT
 ## ISLR Ch 3 (Robin)
 * You need to comment on how the coefficient for `nox` is so far different than all the rest. 
 * In general you need to comment on how the results from the individual SLR and the MLR regression coefficients differ. 
+
+## ISLR Ch 4 (Aaron)
+* Make sure to suppressMessages on packages, or hide warnings when loading packages.
+* Good code for your analysis, maybe add additional write up or better graphs/tables besides default.
+* Add more explanation to your answers. Explain why that answer is the way it is.
