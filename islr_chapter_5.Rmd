@@ -93,3 +93,4 @@ pred.glm[probs > 0.5] <- "Yes"
 mean(pred.glm != Default[-train, ]$default)
 ```
 
+No it does not.
