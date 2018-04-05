@@ -138,7 +138,7 @@ $(document).ready(function () {
 </div>
 <div id="ii.-loocv" class="section level3">
 <h3>ii. LOOCV?</h3>
-<p>It requires fitting the potentially computationally expensive model n times compared to k-fold cross-validation which requires the model to be fitted only k times. Second, the LOOCV cross-validation approach may give approximately unbiased estimates of the test error, since each training set contains n−1 observations; however, this approach has higher variance than k-fold cross-validation since we are averaging the outputs of n fitted models trained on an almost identical set of observations, these outputs are highly correlated, and the mean of highly correlated quantities has higher variance than less correlated ones. So, there is a bias-variance trade-off associated with the choice of k in k-fold cross-validation.</p>
+<p>It requires fitting the potentially computationally expensive model n times compared to k-fold cross-validation which requires the model to be fitted only k times. Second, the LOOCV cross-validation approach may give approximately unbiased estimates of the test error, since each training set contains n−1 observations. It has higher variance than k-fold cross-validation since we are averaging the outputs of n fitted models trained on an almost identical set of observations.</p>
 </div>
 </div>
 </div>
