@@ -258,6 +258,7 @@ probs &lt;- predict(fit.glm, newdata = Default[-train, ], type = &quot;response&
 pred.glm[probs &gt; 0.5] &lt;- &quot;Yes&quot;
 mean(pred.glm != Default[-train, ]$default)</code></pre>
 <pre><code>## [1] 0.0264</code></pre>
+<p>No it does not.</p>
 </div>
 </div>
 
