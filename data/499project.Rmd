@@ -30,21 +30,21 @@ mid_appr = mid_appr %>% mutate(demwin = as.numeric(dem - rep))
 mod1 = lm(demwin ~ appr + samplesize + enddate,data = mid_appr)
 
 x = ymd("2018-04-19")
-enddate = rep(x,100)
-appr = 1:100
-samplesize = rep(1000,100)
+enddate = rep(x,21)
+appr = 30:50
+samplesize = rep(1000,21)
 
 df = data.frame(appr,samplesize,enddate)
 
 predictions = data.frame(predict(mod1,df))
-predictions = predictions %>% mutate(probs = predict.mod1..df./100, seats = 468*probs) %>% mutate(super = as.numeric((seats > 70)), regmaj = as.numeric((seats > 0)) )
+predictions = predictions %>% mutate(probs = predict.mod1..df./100, seats = 435*probs) %>% mutate(super = as.numeric((seats > 70)), regmaj = as.numeric((seats > 0)) )
 
 ggplot(predictions, aes(x = seats)) + geom_histogram(bins = 10)
 mean(predictions$super)
 mean(predictions$regmaj)
 ```
 
-###I combined the midterm polls and the approval polls and then created a new variable called demwin. This variable was the difference between the dem and rep variable and it is the percentage of support one part has over the other. I created a linear model with this variable as the response. The explanatory variables were approval, sample size of the poll, and the end date of the poll. I then created a dataframe with approval from 1% to 100%, sample size constant at 1000, and the end date constant at the last data a poll was recorded. I used this dataframe to create a distribution of predictions for democratic support over republicans based on Trump's approval rating. I then used the predictions to find how many more seats one party would win over the other. One party must have 70 more seats than the other to have a super majority and 1 more seat to have a regular majority. The probability for a super majority is .29 and the probability for a regular majority is .55.
+###I combined the midterm polls and the approval polls and then created a new variable called demwin. This variable was the difference between the dem and rep variable and it is the percentage of support one part has over the other. I created a linear model with this variable as the response. The explanatory variables were approval, sample size of the poll, and the end date of the poll. I then created a dataframe with approval from 30% to 50% since thats close to the range of his approval, sample size constant at 1000, and the end date constant at the last data a poll was recorded. I used this dataframe to create a distribution of predictions for democratic support over republicans based on Trump's approval rating. I then used the predictions to find how many more seats in the house one party would win over the other. One party must have 70 more seats than the other to have a super majority and 1 more seat to have a regular majority. The probability for a super majority is 1 and the probability for a regular majority is 0. 
 
 
 ```{r,message=FALSE,warning=FALSE,error=FALSE}
